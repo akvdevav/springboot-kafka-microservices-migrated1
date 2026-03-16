@@ -1,17 +1,1 @@
-package net.javaguides.product_service.service;
-
-
-
-import net.javaguides.product_service.dto.category.CategoryResponseDto;
-import net.javaguides.product_service.dto.category.CreateCategoryRequestDto;
-
-import java.util.List;
-
-public interface CategoryService {
-    CategoryResponseDto createCategory(CreateCategoryRequestDto requestDto);
-    CategoryResponseDto updateCategory(String id, CreateCategoryRequestDto requestDto);
-    void deleteCategory(String id);
-    CategoryResponseDto getCategoryById(String id);
-    List<CategoryResponseDto> getAllCategories();
-    List<CategoryResponseDto> getRootCategories(); // Danh mục gốc cho mega menu
-}
+// Error communicating with Cloud GenAI: HTTP 400 - {"error":{"code":"runtime_error","message":"500 - <html>\r\n<head><title>500 Internal Server Error</title></head>\r\n<body>\r\n<center><h1>500 Internal Server Error</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n","param":null,"type":"runtime_error"}}

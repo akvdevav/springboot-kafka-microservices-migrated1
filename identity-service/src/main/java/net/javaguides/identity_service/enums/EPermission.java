@@ -1,11 +1,1 @@
-package net.javaguides.identity_service.enums;
-
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-
-@RequiredArgsConstructor
-@Getter
-public enum EPermission {
-    VIEW_PRODUCTS, SEARCH_PRODUCTS, PLACE_ORDERS, VIEW_OWN_ORDERS, RATE_PRODUCT, EDIT_OWN_PROFILE,
-    MANAGE_PRODUCTS, MANAGE_INVENTORY, PROCESS_ORDERS, CANCEL_ORDERS, MANAGE_RETURNS, VIEW_ALL_ORDERS, RESPOND_TO_CUSTOMER_QUERIES, MANAGE_PROMOTIONS, EDIT_CUSTOMER_PROFILES
-}
+// Error communicating with Cloud GenAI: HTTP 400 - {"error":{"code":"runtime_error","message":"500 - <html>\r\n<head><title>500 Internal Server Error</title></head>\r\n<body>\r\n<center><h1>500 Internal Server Error</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n","param":null,"type":"runtime_error"}}

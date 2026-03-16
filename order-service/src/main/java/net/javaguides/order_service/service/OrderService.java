@@ -1,18 +1,1 @@
-package net.javaguides.order_service.service;
-
-
-import net.javaguides.common_lib.dto.order.OrderDTO;
-import net.javaguides.order_service.dto.OrderRequestDto;
-import net.javaguides.order_service.dto.OrderResponseDto;
-import net.javaguides.order_service.dto.OrderResponseDtoWithOutOrderItems;
-
-import java.awt.print.Pageable;
-import java.util.List;
-
-public interface OrderService {
-    OrderDTO placeOrder(OrderRequestDto order, Long userId, String email);
-    OrderResponseDto checkOrderStatusByOrderId(String orderId);
-    OrderResponseDto updateOrderStatus(String orderId, int version);
-    OrderDTO cancelOrder(String orderId, Long userId);
-    List<OrderResponseDtoWithOutOrderItems> getAllOrders(Long userId, int page, int size);
-}
+// Error communicating with Cloud GenAI: HTTP 400 - {"error":{"code":"runtime_error","message":"500 - <html>\r\n<head><title>500 Internal Server Error</title></head>\r\n<body>\r\n<center><h1>500 Internal Server Error</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n","param":null,"type":"runtime_error"}}

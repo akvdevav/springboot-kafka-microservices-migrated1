@@ -1,14 +1,1 @@
-package net.javaguides.payment_service.service;
-
-
-import net.javaguides.common_lib.dto.order.OrderEvent;
-import net.javaguides.payment_service.dto.PaymentDto;
-import net.javaguides.payment_service.entity.Payment;
-import net.javaguides.payment_service.entity.PaymentStatus;
-
-public interface PaymentService {
-    void createPayment(OrderEvent orderEvent);
-    PaymentDto getPaymentByOrderId(String orderId);
-    void updateStatusPayment(String orderId, PaymentStatus status);
-    void refundPayment(String orderId);
-}
+// Error communicating with Cloud GenAI: HTTP 400 - {"error":{"code":"runtime_error","message":"500 - <html>\r\n<head><title>500 Internal Server Error</title></head>\r\n<body>\r\n<center><h1>500 Internal Server Error</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n","param":null,"type":"runtime_error"}}

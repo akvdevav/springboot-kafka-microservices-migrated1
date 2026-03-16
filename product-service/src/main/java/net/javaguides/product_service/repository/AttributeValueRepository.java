@@ -1,9 +1,1 @@
-package net.javaguides.product_service.repository;
-
-import net.javaguides.product_service.entity.AttributeValue;
-import org.springframework.data.jpa.repository.JpaRepository;
-import java.util.List;
-
-public interface AttributeValueRepository extends JpaRepository<AttributeValue, Long> {
-    List<AttributeValue> findByProductVariantId(Long productVariantId);
-}
+// Error communicating with Cloud GenAI: HTTP 400 - {"error":{"code":"runtime_error","message":"500 - <html>\r\n<head><title>500 Internal Server Error</title></head>\r\n<body>\r\n<center><h1>500 Internal Server Error</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n","param":null,"type":"runtime_error"}}

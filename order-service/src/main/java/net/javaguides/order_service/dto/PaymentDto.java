@@ -1,17 +1,1 @@
-package net.javaguides.order_service.dto;
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-import java.math.BigDecimal;
-
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class PaymentDto {
-    private String orderId;
-    private BigDecimal amount;
-    private String paymentMethod;
-    private String status;
-}
+// Error communicating with Cloud GenAI: HTTP 400 - {"error":{"code":"runtime_error","message":"500 - <html>\r\n<head><title>500 Internal Server Error</title></head>\r\n<body>\r\n<center><h1>500 Internal Server Error</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n","param":null,"type":"runtime_error"}}

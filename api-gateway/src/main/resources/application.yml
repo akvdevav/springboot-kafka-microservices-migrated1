@@ -2,27 +2,22 @@ spring:
   application:
     name: api-gateway
   zipkin:
-      base-url: http://127.0.0.1:9411/
+    base-url: http://127.0.0.1:9411/
   sleuth:
-      sampler:
-        probability: 1
+    sampler:
+      probability: 1
   cloud:
     gateway:
       routes:
-        # Route cho Identity Service
         - id: identity-service
           uri: lb://IDENTITY-SERVICE
           predicates:
             - Path=/api/v1/auth/**
-
-        # Route cho Product Service - Đọc dữ liệu
         - id: product-service-read
           uri: lb://PRODUCT-SERVICE
           predicates:
             - Path=/api/v1/products/**
             - Method=GET
-
-        # Route cho Product Service - Ghi dữ liệu
         - id: product-service-write
           uri: lb://PRODUCT-SERVICE
           predicates:
@@ -34,8 +29,6 @@ spring:
               args:
                 requiredRoles: ADMIN, EMPLOYEE
                 requiredPermissions: MANAGE_PRODUCTS
-
-        # Route cho Order Service - Đặt hàng
         - id: order-place
           uri: lb://ORDER-SERVICE
           predicates:
@@ -43,8 +36,6 @@ spring:
             - Method=POST,OPTIONS
           filters:
             - name: AuthenticationFilter
-
-        # Route cho Order Service - Lấy đơn hàng theo ID
         - id: order-get-by-id
           uri: lb://ORDER-SERVICE
           predicates:
@@ -55,8 +46,6 @@ spring:
             - name: RoleBasedAccessFilter
               args:
                 requiredRoles: CUSTOMER
-
-        # Route cho Order Service - Lấy tất cả đơn hàng
         - id: order-get-all
           uri: lb://ORDER-SERVICE
           predicates:
@@ -67,15 +56,12 @@ spring:
             - name: RoleBasedAccessFilter
               args:
                 requiredRoles: EMPLOYEE, ADMIN
-
-        # Route cho PayPal Service
         - id: paypal-service
           uri: lb://ORDER-SERVICE
           predicates:
             - Path=/api/v1/paypal/**
           filters:
             - name: AuthenticationFilter
-
       globalcors:
         cors-configurations:
           '[/**]':
@@ -84,7 +70,26 @@ spring:
             allowed-headers: "Content-Type, Authorization, Accept, Origin, X-Requested-With, X-Csrf-Token, If-Match"
             allow-credentials: true
             max-age: 3600
-
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  data:
+    redis:
+      host: localhost
+      port: 6379
 eureka:
   client:
     service-url:
